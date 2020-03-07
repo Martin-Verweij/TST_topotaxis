@@ -1,0 +1,82 @@
+
+# Cellular Potts parameters
+T = 20
+
+target_area = 400
+ref_adhesive_area = 100000
+area_constraint_type = 0
+lambda = 50
+
+lambda2 = 0
+Jtable = simplified_act_J.dat
+conn_diss = 1000
+cluster_connectivity = false
+
+chemotaxis = 0
+border_energy = 200
+
+
+target_perimeter = 313
+lambda_perimeter = 1
+
+#lymphocyte matrix interaction
+lambda_matrix = 0
+lambda_c = 6000
+max_matrix = 4
+age_saturation = 5
+spontenous_p = 0
+decay_p = 0.005
+eden_p = 0.004
+
+geometric_mean = true
+single_site_power = 6
+
+type_init_cells = 2
+# note: do not change the following parameters for "long" cells (lambda2>0)
+neighbours = 2
+
+periodic_boundaries = true
+
+# PDE parameters
+# layer 0 = chemokine layer, layer 1 empty, layer 2 = used to keep track of the age of the lattice sites, layer 3 = lymphocyte matrix interaction layer
+n_chem = 4
+diff_coeff =  0, 0,  0, 0
+decay_rate = 0.00, 0, 0,0
+secr_rate = 0, S0, 0,0
+saturation = 0., 0, 0,0
+dt = 0.0, 0.0, 0.00,0
+dx = 0.732e-6, 0.732e-6 , 0.732e-6 , 0.732e-6
+pde_its = 0, 10 ,0,0
+
+
+# Act model parameters
+lambda_Act = 185
+max_Act = 34
+
+lambda_schooling = 0
+J_pol = 0
+
+
+# initial conditions (create a "blob" of cells in the middle)
+n_init_cells = 1
+size_init_cells = 25
+sizex = 500
+sizey = 1000
+
+divisions = 0
+mcs = 10
+rseed = -1
+subfield = 1
+relaxation = 100
+
+
+
+storage_stride = 5000
+graphics = false
+store = true
+datadir = ./
+
+pillar_distance = 32
+pillar_r = 0.11
+pillar_radius = 10
+pillar_energy = 20
